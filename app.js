@@ -4,8 +4,10 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 
-app.get('/webhook', (req, res) => {
-  console.log('Request Received');
+app.post('/webhook', (req, res) => {
+  console.log('Request Body:', req.body);
+  console.log('All Headers:', req.headers);
+  console.log('Query Parameters:', req.query);
   const { 'hub.mode': mode, 'hub.challenge': challenge, 'hub.verify_token': token } = req.query;
 
   if (mode === 'subscribe' && token === verifyToken) {
