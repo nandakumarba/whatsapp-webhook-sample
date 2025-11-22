@@ -5,6 +5,7 @@ const port = process.env.PORT || 3001;
 app.get("/", (req, res) => res.type('html').send(html));
 
 app.get('/webhook', (req, res) => {
+  console.log('Request Received');
   const { 'hub.mode': mode, 'hub.challenge': challenge, 'hub.verify_token': token } = req.query;
 
   if (mode === 'subscribe' && token === verifyToken) {
@@ -13,6 +14,7 @@ app.get('/webhook', (req, res) => {
   } else {
     res.status(403).end();
   }
+  console.log('Request Processed');
 });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
