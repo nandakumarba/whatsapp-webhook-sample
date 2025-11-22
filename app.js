@@ -4,7 +4,7 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 
-app.post('/webhook', (req, res) => {
+app.get('/webhook', (req, res) => {
   console.log('Request Body:', req.body);
   console.log('All Headers:', req.headers);
   console.log('Query Parameters:', req.query);
