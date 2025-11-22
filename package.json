@@ -1,0 +1,16 @@
+{
+  "name": "whatsapp-webhook-sample",
+  "version": "1.0.0",
+  "description": "Whatsapp Webhook Sample",
+  "main": "app.js",
+  "repository": "https://github.com/nandakumarba/whatsapp-webhook-sample",
+  "author": "Nandakumar",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.0.0"
+  }
+}
