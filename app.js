@@ -33,3 +33,8 @@ app.post('/', (req, res) => {
   console.log(JSON.stringify(req.body, null, 2));
   res.status(200).end();
 });
+
+// Start the server
+app.listen(port, () => {
+  console.log(`\nListening on port ${port}\n`);
+});
